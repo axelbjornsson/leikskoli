@@ -108,7 +108,8 @@
       var url = URL.createObjectURL(blob);
       var link = document.createElement("a");
       link.href = url;
-      link.download = sheet.title.replace(/[^\wÀ-ÿ]+/g, "-") + "-" + (index + 1) + ".svg";
+      link.download =
+        sheet.title.replace(/[^\wÀ-ÿ]+/g, "-").replace(/^-+|-+$/g, "") + "-" + (index + 1) + ".svg";
       document.body.appendChild(link);
       link.click();
       link.remove();

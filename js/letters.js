@@ -31,7 +31,7 @@
     { upper: "Ú", lower: "ú", words: ["úlpa", "úlfur", "úr"] },
     { upper: "V", lower: "v", words: ["vatn", "vasi", "vetur"] },
     { upper: "X", lower: "x", words: ["lax", "box", "sex"], inside: true },
-    { upper: "Y", lower: "y", words: ["dyr", "lyf", "systir"], inside: true },
+    { upper: "Y", lower: "y", words: ["sykur", "lyf", "systir"], inside: true },
     { upper: "Ý", lower: "ý", words: ["ýsa", "ýta", "ýmis"] },
     { upper: "Þ", lower: "þ", words: ["þak", "þrír", "þvottur"] },
     { upper: "Æ", lower: "æ", words: ["æfing", "æði", "ær"] },
@@ -44,7 +44,9 @@
     return String(value)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
   }
 
   function findLetter(upper) {
