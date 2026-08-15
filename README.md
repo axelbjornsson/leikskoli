@@ -22,7 +22,8 @@ Síðan birtist sjálfkrafa á GitHub Pages þegar ýtt er á `main`:
 
 **https://axelbjornsson.github.io/leikskoli/**
 
-Til að kveikja á þessu í fyrsta skipti: farðu í **Settings → Pages** í hugbúnaðarsafninu og
+Verkflæðið kveikir sjálft á Pages (`enablement: true`) í fyrstu keyrslu. Ef það mistekst (t.d.
+vegna réttinda) er hægt að kveikja handvirkt: farðu í **Settings → Pages** í hugbúnaðarsafninu og
 veldu **Source: GitHub Actions**. Eftir það sér `.github/workflows/pages.yml` um birtinguna.
 Hægt er líka að keyra hana handvirkt undir **Actions → Birta á GitHub Pages → Run workflow**.
 
