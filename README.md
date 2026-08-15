@@ -14,14 +14,32 @@ Vefsíða sem býr sjálfkrafa til prentanleg verkefni fyrir leikskólabörn.
 - **Vistun** – hvert blað má vista sem SVG-skrá til að prenta síðar eða breyta.
 - **Fræ** – með því að slá inn sama „fræ“ fást nákvæmlega sömu blöð aftur.
 
-## Notkun
+## Að skoða síðuna
 
-Þetta er hrein kyrrstæð vefsíða án byggingarskrefa og án ytri pakka. Opnaðu `index.html`
-beint í vafra eða keyrðu einfaldan vefþjón í möppunni:
+### 1. Á netinu (GitHub Pages)
+
+Síðan birtist sjálfkrafa á GitHub Pages þegar ýtt er á `main`:
+
+**https://axelbjornsson.github.io/leikskoli/**
+
+Til að kveikja á þessu í fyrsta skipti: farðu í **Settings → Pages** í hugbúnaðarsafninu og
+veldu **Source: GitHub Actions**. Eftir það sér `.github/workflows/pages.yml` um birtinguna.
+Hægt er líka að keyra hana handvirkt undir **Actions → Birta á GitHub Pages → Run workflow**.
+
+### 2. Á eigin tölvu
+
+Þetta er hrein kyrrstæð vefsíða án byggingarskrefa og án ytri pakka. Einfaldast er að
+tvísmella á `index.html` og opna hana beint í vafra. Til að líkja betur eftir vefþjóni:
 
 ```bash
 python3 -m http.server 8000
 # opnaðu http://localhost:8000
+```
+
+eða, ef Node.js er uppsett:
+
+```bash
+npx serve .
 ```
 
 Síðan virkar án nettengingar og engin gögn eru send neitt.
@@ -36,6 +54,7 @@ Síðan virkar án nettengingar og engin gögn eru send neitt.
 | `js/coloring.js` | Teiknar litamyndir sem SVG |
 | `js/letters.js` | Býr til stafaverkefni fyrir íslenska stafrófið |
 | `js/app.js` | Tengir viðmótið, prentun og vistun |
+| `.github/workflows/pages.yml` | Birtir síðuna sjálfkrafa á GitHub Pages |
 
 ## Prentari
 
