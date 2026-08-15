@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="is">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verkefnasmiðja fyrir leikskólabörn</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header no-print">
+      <h1>Verkefnasmiðja fyrir leikskólabörn</h1>
+      <p>Búðu til litamyndir og stafaverkefni og prentaðu þau út — allt í vafranum, engin nettenging nauðsynleg.</p>
+    </header>
+
+    <main>
+      <form id="controls" class="controls no-print">
+        <fieldset>
+          <legend>Tegund verkefnis</legend>
+          <label>
+            <input type="radio" name="type" value="coloring" checked />
+            Litamynd
+          </label>
+          <label>
+            <input type="radio" name="type" value="letters" />
+            Stafaverkefni
+          </label>
+        </fieldset>
+
+        <fieldset id="coloring-options">
+          <legend>Litamynd</legend>
+          <label for="theme">Þema</label>
+          <select id="theme" name="theme">
+            <option value="random">Af handahófi</option>
+            <option value="animals">Dýr</option>
+            <option value="vehicles">Farartæki</option>
+            <option value="nature">Náttúra</option>
+            <option value="shapes">Form</option>
+          </select>
+
+          <label for="detail">Smáatriði</label>
+          <select id="detail" name="detail">
+            <option value="1">Einföld (yngstu börnin)</option>
+            <option value="2" selected>Miðlungs</option>
+            <option value="3">Meiri smáatriði</option>
+          </select>
+        </fieldset>
+
+        <fieldset id="letter-options" hidden>
+          <legend>Stafaverkefni</legend>
+          <label for="letters">Stafir</label>
+          <select id="letters" name="letters" multiple size="6"></select>
+          <p class="hint">Haltu inni Ctrl (eða Cmd) til að velja fleiri en einn staf. Ef enginn stafur er valinn er valið af handahófi.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Almennt</legend>
+          <label for="count">Fjöldi blaðsíðna</label>
+          <input type="number" id="count" name="count" min="1" max="10" value="1" />
+
+          <label for="seed">Fræ (valfrjálst)</label>
+          <input type="text" id="seed" name="seed" placeholder="t.d. dagur1" />
+          <p class="hint">Sama fræ gefur alltaf sömu verkefni — handhægt til að prenta sama blað aftur.</p>
+
+          <label class="checkbox">
+            <input type="checkbox" id="autoprint" name="autoprint" />
+            Opna prentglugga sjálfkrafa eftir að verkefni eru búin til
+          </label>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" id="generate">Búa til verkefni</button>
+          <button type="button" id="print">Prenta</button>
+          <button type="button" id="download">Vista blað (SVG)</button>
+        </div>
+      </form>
+
+      <section id="output" class="output" aria-live="polite"></section>
+    </main>
+
+    <footer class="site-footer no-print">
+      <p>
+        Öll verkefni eru búin til í vafranum með teiknuðum SVG-myndum. Sjá
+        <a href="README.md">README</a> fyrir umræðu um notkun gervigreindar.
+      </p>
+    </footer>
+
+    <script src="js/random.js"></script>
+    <script src="js/coloring.js"></script>
+    <script src="js/letters.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
